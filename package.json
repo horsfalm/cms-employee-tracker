@@ -1,0 +1,22 @@
+{
+  "name": "employee_db",
+  "version": "1.0.0",
+  "description": "employee tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsfalm/cms-employee-tracker.git"
+  },
+  "author": "Mark Horsfall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horsfalm/cms-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/horsfalm/cms-employee-tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
