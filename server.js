@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const cTable = require("console.table");
-const sql = require('./db/query_lib');
+const sql = require('./db/queries');
 const cHelper = require('./lib/choiceHelper');
 
 // add an department
