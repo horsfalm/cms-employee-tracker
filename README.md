@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-  This will allow you to run specific queries from the CLI to query and manipulate the Database using Node.JS
+  Application to perform queries from the CL to review and alter a database using Node.JS and NPM Inquirer.
 
 ## Background
     
