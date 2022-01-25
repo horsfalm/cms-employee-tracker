@@ -32,7 +32,7 @@
     THEN I am prompted to select an employee to update and their new role and this information is updated in the database
   
   ## Video
-  [![Vimeo Demonstration](./db/lib/assets/screen_shot.jpg)](https://vimeo.com/manage/videos/669666094)
+  [![Vimeo Demonstration](./db/lib/images/screen_shot.jpg)](https://vimeo.com/manage/videos/669666094)
 
   ## License
   
