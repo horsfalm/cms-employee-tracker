@@ -1,33 +1,34 @@
 INSERT INTO department (department_name)
 VALUES ("Sales"),
-       ("Accounting"),
-       ("Human Resources"),
-       ("Business Integrations");
+       ("Finance"),
+       ("HR"),
+       ("Operations");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Sales Manager", 90000, 1),
-       ("Sales Lead", 80000, 1),
-       ("Sales Representative", 45000, 1),
-       ("Accounting Manager", 85000, 2),
-       ("Accounting Lead", 75000, 2),
-       ("Accounting Representative", 40000, 2),
+VALUES ("Sales Manager", 120000, 1),
+       ("Sales Lead", 75000, 1),
+       ("Sales Representative", 55000, 1),
+       ("Finance Manager", 90500, 2),
+       ("Finance Lead", 70000, 2),
+       ("Finance Representative", 50000, 2),
        ("HR Manager", 80000, 3),
-       ("HR Lead", 70000, 3),
-       ("HR Representative", 35000, 3),
-       ("BI Manager", 120000, 4),
-       ("Systems Administrator", 100000, 4),
-       ("Application Administrator", 85000, 4);
+       ("HR Lead", 65000, 3),
+       ("HR Representative", 40000, 3),
+       ("Ops Manager", 110000, 4),
+       ("Ops Lead", 90000, 4),
+       ("Ops Representative", 80000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Jerry", "Smith", 1, NULL),
-       ("Sally", "Sue", 2, 1),
-       ("Bob", "Ross", 3, 1),
-       ("Rick", "Sanchez", 4, NULL),
-       ("Barbara", "Jones", 5, 4),
-       ("Michael", "Ericson", 6, 4),
-       ("Morty", "Mortison", 7, NULL),
-       ("Sarah", "Henderson", 8, 7),
-       ("Bill", "Hicks", 9, 7),
-       ("Paul", "Paulson", 10, NULL),
-       ("Bill", "Hicks", 11, 10),
-       ("Larry", "David", 12, 10);
+VALUES ("Matt", "Simms", 1, NULL),
+       ("Lucy", "Spence", 2, 1),
+       ("Ben", "McMahon", 3, 1),
+       ("Kacey", "Kelly", 4, NULL),
+       ("Luke", "Webb", 5, 4),
+       ("Henry", "de Wilde", 6, 4),
+       ("Elise", "Hickey", 7, NULL),
+       ("Matt", "Flanagan", 8, 7),
+       ("Rob", "Edwin", 9, 7),
+       ("Rebecca", "Harris", 10, NULL),
+       ("Jon", "Maekitalo", 11, 10),
+       ("Joel", "Smith", 12, 10);
+       ("Cameron", "Connell", 12, 10);

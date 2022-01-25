@@ -10,12 +10,12 @@ const newDept = async () => {
      {
        type: "input",
        name: "name",
-       message: "What is the name of the Department",
+       message: "What is the name of the Department you would like to add?",
        validate: (name) =>{
          if (name) {
            return true;
          } else {
-           console.log(" Please Enter a Department Name!")
+           console.log(" Please enter a Department Name.")
            return false;
          }
        },
@@ -38,12 +38,12 @@ const newEmp = async () => {
       {
         type: "input",
         name: "first",
-        message: "What is the Employees First Name?",
+        message: "What is the first Name of the employee you would like to add?",
         validate: (first) =>{
           if (first && isNaN(first)) {
             return true;
           } else {
-            console.log(" Please Enter a Name!")
+            console.log(" Please enter a Name.")
             return false;
           }
         },
@@ -51,12 +51,12 @@ const newEmp = async () => {
      {
       type: "input",
       name: "last",
-      message: "What is the Employees Last Name?",
+      message: "What is the last name of the employee you would like to add?",
       validate: (last) =>{
         if (last && isNaN(last)) {
           return true;
         } else {
-          console.log(" Please Enter a Name!")
+          console.log(" Please enter a Name.")
           return false;
         }
       },
@@ -64,14 +64,14 @@ const newEmp = async () => {
     {
       type: "list",
       name: 'role_id',
-      message: "What is the Employees Role?",
+      message: "What is the role of the employee you wish to add?",
       choices: roleArr,
       loop: false,
     },
     {
       type: "list",
       name: 'manager_id',
-      message: "Who is the Employees Manager?",
+      message: "Who is the Manager of the employee you wish to add?",
       choices: mgmtArr,
       loop: false,
     }
@@ -92,12 +92,12 @@ const newRole = async () => {
       {
         type: "input",
         name: "title",
-        message: "What is the name of the Role?",
+        message: "What is the name of the Role you wish to add?",
         validate: (title) =>{
           if (title) {
             return true;
           } else {
-            console.log(" Please Enter a Role Name!")
+            console.log(" Please enter a Role name.")
             return false;
           }
         },
@@ -117,7 +117,7 @@ const newRole = async () => {
      {
       type: "list",
       name: 'department_id',
-      message: "What Department is the Role associated with?",
+      message: "What Department is the Role connected to?",
       choices: choicesArr,
       loop: false,
     }
@@ -138,7 +138,7 @@ const delEmp = async () => {
     {
       type: "list",
       name: "emp_id",
-      message: "What Employee do you want to Delete?",
+      message: "Which Employee do you wish to Remove?",
       choices: empArr,
       loop: false,
     }
@@ -161,14 +161,14 @@ const updateEmpRole = async () => {
     {
       type: "list",
       name: "emp_id",
-      message: "What is the Employee do you want to update?",
+      message: "Which Employee record do you want to update?",
       choices: empArr,
       loop: false,
     },
     {
       type: "list",
       name: 'role_id',
-      message: "What is the Employees Role?",
+      message: "What is the updated role?",
       choices: roleArr,
       loop: false,
     }
@@ -192,14 +192,14 @@ const updateEmpManager = async () => {
     {
       type: "list",
       name: "emp_id",
-      message: "What is the Employee do you want to update?",
+      message: "Which Employee record do you wish to update?",
       choices: empArr,
       loop: false,
     },
     {
       type: "list",
       name: 'manager_id',
-      message: "Who is the Employees Manager?",
+      message: "Who is the relevant Manager?",
       choices: mgmtArr,
       loop: false,
     }
@@ -278,7 +278,7 @@ const viewEmpByDept = async () => {
     {
       type: "list",
       name: "dept_id",
-      message: "What is the Department do you want to view Employees for?",
+      message: "Which department do you wish to view employees for?",
       choices: deptArr,
       loop: false
     }
@@ -305,7 +305,7 @@ const viewEmpByMgr = async () => {
     {
       type: "list",
       name: "manager_id",
-      message: "Which Manager do you want to view Employees for?",
+      message: "Which manager do you wish to view employees for?",
       choices: mgmtArr,
       loop: false
     }
@@ -329,18 +329,19 @@ const chooseRequest = () => {
         type: 'list',
         name: 'request',
         message: 'What would you like to do?',
-        choices: ['Add a Department', 
-                  'Add an Employee', 
-                  'Add a Role',
-                  'Delete an Employee', // Bonus
-                  'Update Employees Role',
-                  'Update Employees Manager', // Bonus 
-                  'View All Departments', 
-                  'View All Employees', 
-                  'View All Roles', 
-                  'View Department Budget', // Bonus
-                  'View Employees by Department', // Bonus
-                  'View Employees by Manager' // Bonus
+        choices: ['Add a department', 
+                  'Add an employee', 
+                  'Add a role',
+                  'Delete an employee',
+                  'Update employee role',
+                  'Update employee manager', 
+                  'View all departments', 
+                  'View all employees', 
+                  'View all roles', 
+                  'View department budget',
+                  'View employees by department',
+                  'View employees by manager',
+                  'Exit'
                  ],
         loop: false,
       },
@@ -351,41 +352,44 @@ const chooseRequest = () => {
       console.log(request);
     //   Switch case
     switch (request) {
-        case 'Add a Department':
+        case 'Add a department':
           newDept();
           break;
-        case 'Add a Role':
+        case 'Add a role':
           newRole();
           break;
-        case 'Add an Employee':
+        case 'Add an employee':
           newEmp();
           break;
-        case 'Delete an Employee':
+        case 'Delete an employee':
           delEmp();
           break;
-        case 'Update Employees Role':
+        case 'Update employee role':
           updateEmpRole();
           break;
-        case 'Update Employees Manager':
+        case 'Update employee manager':
           updateEmpManager();
           break;
-        case 'View All Departments':
+        case 'View all departments':
           viewDepts();
           break;
-        case 'View All Employees':
+        case 'View all employees':
           viewEmps();
           break;
-        case 'View All Roles':
+        case 'View all roles':
           viewRoles();
           break;         
-        case 'View Department Budget':
+        case 'View department budget':
           viewBudgets();
           break;
-        case 'View Employees by Department':
+        case 'View employees by department':
           viewEmpByDept();
           break;
-        case 'View Employees by Manager':
+        case 'View employees by manager':
           viewEmpByMgr();
+          break;
+        case 'Exit':
+          console.log('Thank you. Goodbye.');
           break;                
     
         default:
