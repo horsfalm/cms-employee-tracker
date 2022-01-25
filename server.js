@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
 const cTable = require("console.table");
 const sql = require('./db/queries');
-const cHelper = require('./lib/choiceHelper');
+const cHelper = require('./lib/choiceLogic');
 
-// add an department
+// add a department
 const newDept = async () => {  
 
   const department = await inquirer.prompt([
@@ -129,8 +129,7 @@ const newRole = async () => {
  
 }
 
-// Delete and Employee
-// Bonus Objective
+// Delete an Employee
 const delEmp = async () => {
   const empArr = await cHelper.NonMgmtChoices();
 
@@ -150,7 +149,7 @@ const delEmp = async () => {
 
 }
 
-// Update an employees role
+// Update employee role
 const updateEmpRole = async () => {
 
   const roleArr = await cHelper.roleChoices();
@@ -180,8 +179,7 @@ const updateEmpRole = async () => {
  
 }
 
-// Update an employees Manager
-// Bonus Objective
+// Update an employee Manager
 const updateEmpManager = async () => {
 
   const empArr = await cHelper.NonMgmtChoices();
@@ -252,8 +250,7 @@ const viewEmps = () => {
   }) 
 }
 
-// View All Departments and their Budget 
-// Bonus Objective
+// View All departments and their budgets 
 const viewBudgets = async () => {
 
   sql.getBudgetByDept()
@@ -268,8 +265,7 @@ const viewBudgets = async () => {
   }) 
 }
 
-// View All Employees in a specific Department
-// Bonus Objective
+// View all employees in a specific department
 const viewEmpByDept = async () => {
 
   const deptArr = await cHelper.deptChoices();
@@ -295,8 +291,7 @@ const viewEmpByDept = async () => {
 
 }
 
-// View All Employees who report to a specific Manager
-// Bonus Objective
+// View all employees who report to a manager
 const viewEmpByMgr = async () => {
 
   const mgmtArr = await cHelper.mgmtChoices();
@@ -350,7 +345,6 @@ const chooseRequest = () => {
   .then((data) => {
       const {request} = data;
       console.log(request);
-    //   Switch case
     switch (request) {
         case 'Add a department':
           newDept();
