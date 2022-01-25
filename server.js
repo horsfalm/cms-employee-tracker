@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
-const cTable = require("console.table");
+const consoleTab = require("console.table");
 const sql = require('./db/queries');
-const cHelper = require('./lib/choiceLogic');
+const cLogic = require('./lib/choiceLogic');
 
 // add a department
 const newDept = async () => {  
@@ -30,9 +30,9 @@ const newDept = async () => {
 // add an employee
 const newEmp = async () => {
 
-  const roleArr = await cHelper.roleChoices();
+  const roleArr = await cLogic.roleChoices();
 
-  const mgmtArr = await cHelper.mgmtChoices();
+  const mgmtArr = await cLogic.mgmtChoices();
 
   const emp = await inquirer.prompt([
       {
@@ -86,7 +86,7 @@ const newEmp = async () => {
 // Add a role
 const newRole = async () => {
 
-  const choicesArr = await cHelper.deptChoices();
+  const choicesArr = await cLogic.deptChoices();
 
   const role = await inquirer.prompt([
       {
@@ -131,7 +131,7 @@ const newRole = async () => {
 
 // Delete an Employee
 const delEmp = async () => {
-  const empArr = await cHelper.NonMgmtChoices();
+  const empArr = await cLogic.NonMgmtChoices();
 
   const emp = await inquirer.prompt([
     {
@@ -152,9 +152,9 @@ const delEmp = async () => {
 // Update employee role
 const updateEmpRole = async () => {
 
-  const roleArr = await cHelper.roleChoices();
+  const roleArr = await cLogic.roleChoices();
 
-  const empArr = await cHelper.empChoices();
+  const empArr = await cLogic.empChoices();
 
   const emp = await inquirer.prompt([
     {
@@ -182,9 +182,9 @@ const updateEmpRole = async () => {
 // Update an employee Manager
 const updateEmpManager = async () => {
 
-  const empArr = await cHelper.NonMgmtChoices();
+  const empArr = await cLogic.NonMgmtChoices();
 
-  const mgmtArr = await cHelper.mgmtChoices();
+  const mgmtArr = await cLogic.mgmtChoices();
 
   const emp = await inquirer.prompt([
     {
@@ -215,7 +215,7 @@ const viewDepts = () => {
 
   .then(([rows]) => {
     console.log('\n');
-    console.log(cTable.getTable(rows));
+    console.log(consoleTab.getTable(rows));
   })
 
   .then(()=> {
@@ -229,7 +229,7 @@ const viewRoles = () => {
 
   .then(([rows]) => {
     console.log('\n');
-    console.log(cTable.getTable(rows));
+    console.log(consoleTab.getTable(rows));
   })
 
   .then(()=> {
@@ -242,7 +242,7 @@ const viewEmps = () => {
 
   .then(([rows]) => {
     console.log('\n');
-    console.log(cTable.getTable(rows));
+    console.log(consoleTab.getTable(rows));
   })
 
   .then(()=> {
@@ -257,7 +257,7 @@ const viewBudgets = async () => {
 
   .then(([rows]) => {
     console.log('\n');
-    console.log(cTable.getTable(rows));
+    console.log(consoleTab.getTable(rows));
   })
 
   .then(()=> {
@@ -268,7 +268,7 @@ const viewBudgets = async () => {
 // View all employees in a specific department
 const viewEmpByDept = async () => {
 
-  const deptArr = await cHelper.deptChoices();
+  const deptArr = await cLogic.deptChoices();
 
   inquirer.prompt([
     {
@@ -284,7 +284,7 @@ const viewEmpByDept = async () => {
     sql.getEmpByDeptId(data)
       .then(([rows]) =>{
         console.log('\n');
-        console.log(cTable.getTable(rows))
+        console.log(consoleTab.getTable(rows))
         chooseRequest();
       })
   }) 
@@ -294,7 +294,7 @@ const viewEmpByDept = async () => {
 // View all employees who report to a manager
 const viewEmpByMgr = async () => {
 
-  const mgmtArr = await cHelper.mgmtChoices();
+  const mgmtArr = await cLogic.mgmtChoices();
 
   inquirer.prompt([
     {
@@ -310,7 +310,7 @@ const viewEmpByMgr = async () => {
     sql.getEmpByMgrId(data)
       .then(([rows]) =>{
         console.log('\n');
-        console.log(cTable.getTable(rows))
+        console.log(consoleTab.getTable(rows))
         chooseRequest();
       })
   }) 

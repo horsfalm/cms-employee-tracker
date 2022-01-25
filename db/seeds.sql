@@ -30,5 +30,5 @@ VALUES ("Matt", "Simms", 1, NULL),
        ("Rob", "Edwin", 9, 7),
        ("Rebecca", "Harris", 10, NULL),
        ("Jon", "Maekitalo", 11, 10),
-       ("Joel", "Smith", 12, 10);
-       ("Cameron", "Connell", 12, 10);
+       ("Joel", "Smith", 12, 10),
+       ("Cameron", "Connell", 12, 10)
